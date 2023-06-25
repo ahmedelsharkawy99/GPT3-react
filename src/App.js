@@ -1,25 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect, useRef } from "react";
 
-function App() {
+import {
+  Blog,
+  Features,
+  Footer,
+  Header,
+  Possibility,
+  WhatGPT3,
+} from "./containers";
+
+import { CTA, Brand, Navbar } from "./components";
+import "./App.css";
+
+const App = () => {
+  const [isIntersecting, setIsIntersecting] = useState(false);
+
+  const navRef = useRef();
+  const headerRef = useRef();
+
+  useEffect(() => {
+    const navHeight = navRef.current.getBoundingClientRect().height;
+    const stickyNav = function (entries) {
+      const [entry] = entries;
+      if (!entry.isIntersecting) setIsIntersecting(true);
+      else if (entry.isIntersecting) setIsIntersecting(false);
+    };
+    const headerObserver = new IntersectionObserver(stickyNav, {
+      root: null,
+      threshold: 0,
+      rootMargin: `-${navHeight * 1.5}px`,
+    });
+    headerObserver.observe(headerRef.current);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className="App">
+      <div className="gradient__bg">
+        <Navbar isIntersecting={isIntersecting} navRef={navRef} />
+        <Header headerRef={headerRef} />
+      </div>
+      <Brand />
+      <WhatGPT3 />
+      <Features />
+      <Possibility />
+      <CTA />
+      <Blog />
+      <Footer />
+    </main>
   );
-}
+};
 
 export default App;

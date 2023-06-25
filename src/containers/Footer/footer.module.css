@@ -1,0 +1,116 @@
+.gpt3__footer {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-footer);
+  gap: 3rem;
+}
+
+.gpt3__footer-heading {
+  width: 100%;
+  text-align: center;
+}
+
+.gpt3__footer-heading h2 {
+  font-weight: 800;
+  font-size: 62px;
+  line-height: 75px;
+  text-align: center;
+  letter-spacing: -0.04em;
+}
+
+.gpt3__footer button {
+  padding: 1rem;
+  border: 1px solid #ffffff;
+  background-color: transparent;
+  color: #fff;
+  font-size: 18px;
+  line-height: 21px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: 0.3s;
+  word-spacing: 2px;
+  margin-bottom: 7rem;
+}
+
+.gpt3__footer button:hover {
+  background-color: var(--color-bg);
+}
+
+.gpt3__footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.gpt3__footer-links div {
+  width: 250px;
+}
+
+.gpt3__footer-links_logo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.gpt3__footer-links_logo img {
+  width: 118px;
+  height: 30px;
+}
+.gpt3__footer-links_logo address,
+.gpt3__footer-links_col ul li a,
+.gpt3__footer-copyright p {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.gpt3__footer-links_col {
+  display: flex;
+  justify-content: flex-start;
+  text-align: center;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.gpt3__footer-links_col h4 {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.gpt3__footer-links_col ul li {
+  margin-bottom: 1rem;
+}
+
+.gpt3__footer-links_col ul li:last-child {
+  margin-bottom: 0;
+}
+
+.gpt3__footer-copyright {
+  width: 100%;
+  text-align: center;
+}
+
+@media screen and (max-width: 850px) {
+  .gpt3__footer-heading h2 {
+    font-size: 44px;
+    line-height: 50px;
+  }
+  .gpt3__footer-links_col {
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .gpt3__footer-heading h2 {
+    font-size: 27px;
+    line-height: 28px;
+  }
+  .gpt3__footer button {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
